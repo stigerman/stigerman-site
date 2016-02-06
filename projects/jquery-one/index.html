@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery One</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h1>jQuery One</h1>
+    <section>
+      <ul>
+        <li>You will code in this index.html file, save and refresh to see the results of your work.</li>
+        <li><a href="directions.html" id ='target' ="_blank">Directions...</a></li>
+      </ul>
+    </section>
+    <!-- YOUR HTML MARKUP GOES BELOW THIS COMMENT  -->
+    <div id="everything">
+        <a href = "" id = "button">Click me!!!</a>
+        <style>
+            #button{
+                border:10px solid white;
+                background-color:green;
+            }
+            
+        </style>
+        <h1>A heading!</h1>
+        <p><span>Here's some</span> text!</p>
+        <p><span>Here's a second set</span> of text!</p>
+        <div class="holder">
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ul>
+        </div>
+        <div class="holder">
+            <ul>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+                <li>List Item 6</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <!-- YOUR HTML MARKUP GOES ABOVE THIS COMMENT  -->
+  </div>
+  <script type = "text/javascript">
+  function randomColorChange(){
+    return '#'+(Math.floor(Math.random()*16777216)&0xFFFFFF).toString(16);
+}
+    var allDivs = $('div');
+    var allUs = $('ul');
+    $('p').css('color', 'blue');
+    $("#container").css('background-color', 'red');
+    $(".holder").css('border', '1px solid black');
+    $("ul" + "li").css('font-weight', 'bold');
+    //Prepend a new <div> with the text "hello" to div#container
+    $('#container').prepend('<div>hello</div>');
+    $('#container').append('<div>goodbye</div>');
+    $('body').prepend('<div>hey boo</div>');
+    $('body').append('<div>sup boo</div>');
+   // Place a new div#first before the first div.holder
+    $('#first').before(".holder");
+    $('#last').after(".holder");
+    //Create a newDetachedDiv var which is a jQuery object of a new <div> with some text in it
+    var newDetachedDiv = $('<div>Yolo suckas</div>');
+    //Change some of its css properties. Is it on the page yet?
+    newDetachedDiv.css('color','blue');
+    //now append it. Is it on the page yet?
+    newDetachedDiv.appendTo('#container');
+    //Run this code: $('div').remove(); What does it do?
+     //$('div').remove();    //this removes all the divs in the mody
+     // $('#container').empty(); // this empties the container of all children
+     var orphanNode = $('#target').detach();  //detaches the target from its parent
+     $('#container').append(orphanNode); //appends the element that was detached to the container as the last child 
+    $('p').find('span').css('font-size','50px');  //find span within all p elements and change the font size to 50px
+    //play around with the .parent() and .children() methods
+    $('li').parent().css('background-color', 'orange');
+    //play around with the .parent() and .children() methods
+        $('ul').children().css('border-bottom', '20px double black');
+    $('body').css('background','black');
+setInterval(function(){ $('div').css('background',randomColorChange()); },2000);
+    
+     $('#button').click(function() {
+         $('body').each(function() {
+             $(this).css('background',randomColorChange());
+         });
+     });
+     
+     $('')
+
+
+
+
+    
+  </script>  //let's all elements load into the DOM
+</body>
+
+</html>

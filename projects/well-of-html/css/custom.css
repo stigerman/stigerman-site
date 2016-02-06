@@ -1,0 +1,171 @@
+Tags are often referred to as elements.
+Tags usually come in pairs.
+The opening tag denotes the start of a piece of content; the closing tag denotes the end.
+Opening tags can carry attributes, which tell us more about the content of that element.
+Attributes require a name and a value, also called a key-value pair.
+To learn HTML you need to know what tags are available for you to use, what they do, and where they can go. HTML uses tags (characters that sit inside angled brackets) instead of hash mark and asterisk.
+Tags are turned into DOM elements by browser.
+HTML Expresses Hierarchical Relationships : Indentation Matters!!!
+HTML elements can have nested elements, forming a parent to child hierarchical relationship. A paragraph can contain a hyperlink or a page section or division can contain another section or division, or even a list. In fact, a list can even contain another list. When we nest elements like this, we MUST indent them, like so:
+
+<body>
+    <div id="container" class="container">
+        <p>
+            This paragraph tag belongs to the div tag with id "container", and the div tag belongs to the body tag!
+        </p>
+    </div
+</body>
+NOTICE now each tag in the above example is indented by one tab (four spaces) to visually express the parent/child relationships! Always properly indent your HTML!
+
+Setup
+In the root directory of well-of-html, open the file named index.html, and within the <body> tag, you'll find a <div> and two comments stating your markup will be inserted below and above here. You will insert your HTML between these comments:
+<body>
+    <div id="container" class="container">
+        <!-- ALL YOUR MARKUP GOES BELOW HERE -->
+        
+        
+        
+        
+        <!-- ALL YOUR MARKUP GOES ABOVE HERE -->
+    </div>
+    <!-- other html... -->
+NOTE: If you'd like to add CSS styling rules to your markup, you can do so in the <style> tag, located in the <head> tag of the index.html page.
+
+Exercise 1 : Creating Markup
+0 Anchor (aka Hyperlink)
+Anchor tags, or the a tag, allow us to create hyperlinks to other sections of our page or to other webpages or files.
+
+Create a hyperlink using the anchor tag, <a href="google.com"></a>: set its href attribute to your favorite WIKI article.
+1.0 Images
+Image tags are one of HTML tags that do not require a closing tag, but can be closed with simply a slash at the end of the tag.
+
+
+Create an image tag, using one of the images in the directory img/cherries.jpg as the src attribute of the img tag, as in, <img src="img/cherries.jpg" />. Notice the slash before the end of the img tag: />
+1.1 Headings
+Create text headings using tags <h1></h1> through <h6></h6>.
+Bonus, use Bootstrap <small></small> within a header!
+1.2 Paragraphs
+Create some paragraphs with text using <p></p>.
+1.3 Bold, Italics, and Emphasis
+Within a paragraph, add bold, italics, and emphasis with <b></b>, <i></i> or <em></em>, or <strong></strong>.
+1.4 Lists
+Ordered, unordered, and definition.
+
+Create a <ul></ul>, with several <li></li>.
+Create a <ol></ol>, with several <li></li>.
+Definition Lists
+
+<dl>
+  <dt>Canada</dt>
+  <dd>A very cold country</dd>
+  <dt>Brazil</dt>
+  <dd>A very warm country</dd>
+</dl>
+1.5 Forms
+Forms are the bread and butter of the Internet. You can't swap out your credit card without a form!
+
+Here's a really great getting started guide to forms...
+
+Name: 
+E-mail: 
+Message: 
+ Send your message
+Here's the HTML and CSS for the above form:
+
+Form HTML:
+
+<form class="example-form">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" id="mail" />
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg"></textarea>
+    </div>
+
+    <div class="button">
+        <button type="submit">Send your message</button>
+    </div>
+</form>
+Form CSS:
+
+.example-form {
+    /* Just to center the form on the page, use: margin: 0 auto;*/
+    margin: 20px;
+    width: 400px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+.example-form div + div {
+    margin-top: 1em;
+}
+
+.example-form label {
+    /* To make sure that all labels have the same size and are properly aligned */
+    display: inline-block;
+    width: 90px;
+}
+
+.example-form input,
+.example-form textarea {
+    /* To make sure that all text fields have the same font settings
+    By default, textareas have a monospace font */
+    font: 1em sans-serif;
+    /* To give the same size to all text field */
+    width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+}
+
+.example-form input:focus,
+.example-form textarea:focus {
+    /* To give a little highlight on active elements */
+    border-color: #000;
+}
+
+.example-form textarea {
+    /* To properly align multiline text fields with their labels */
+    vertical-align: top;
+    /* To give enough room to type some text */
+    height: 5em;
+    /* To allow users to resize any textarea vertically
+    It does not work on every browsers */
+    resize: vertical;
+}
+
+table {
+    margin: 20px;
+}
+
+table,
+th,
+td {
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 4px;
+}
+
+.example-grid {
+    margin: 20px;
+}
+
+.row-img {
+    margin: 4px;
+}
